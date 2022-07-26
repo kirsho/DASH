@@ -1,0 +1,73 @@
+#!/usr/bin/env Rscript
+
+#  config file for WGBS_Fig.R v1.1 2022-07-13 with
+
+# PLease fill your arguments
+COV <- 7                    # Min coverage value
+DIFC <- 10                  # Minimun abs(delta methylation) % for DMC analysis filtering                  
+QVC <- 0.05                 # Minimun q-value  for DMC analysis filtering
+TS <- 250                   # Tiles size for DMT analysis
+RTS <- 1                    # relative Tiles size for DMT analysis, eg : 0.5 gives half overlapping tiles
+DIF <- 10                   # Minimun abs(delta methylation) % for DMT or eDMR analysis filtering
+QV <- 0.05                  # Minimun q-value  for DMC analysis for DMT or eDMR analysis filtering
+CPG <- 3                    # Minimun number of CpG per DMR for eDMR analysis
+DMC <- 1                    # Minimun number of DMC per DMR for eDMR analysis
+
+ORG <- "mm10"               # Set your organims "mm10" or "hg19"
+CUSTOM <- "yes"             # Do you have custom annotation tracks "yes" or "no". If yes, prepare your tracks and Annots_Custom.Rdata env
+EXTR <- "yes"               # Do you want to extract figures as PDF/PNG "yes" or "no"
+CUSTOMPLOTS <- "yes"        # Do you have customs plots to do? "yes" or "no"
+SAVERDATA <- "yes"          # Do you want to save an RData? "yes" or "no"
+################################################################################################################################################################
+### don't touch anything bellow
+################################################################################################################################################################
+#
+#             uu$$$$$$$$$$$uu
+#           uu$$$$$$$$$$$$$$$$$uu
+#         u$$$$$$$$$$$$$$$$$$$$$u
+#        u$$$$$$$$$$$$$$$$$$$$$$$u
+#       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+#       u$$$$$$$$$$$$$$$$$$$$$$$$$u
+#       u$$$$$$"   "$$$"   "$$$$$$u
+#       "$$$$"      u$u       $$$$"
+#        $$$u       u$u       u$$$
+#        $$$u      u$$$u      u$$$
+#         "$$$$uu$$$   $$$uu$$$$"
+#          "$$$$$$$"   "$$$$$$$"
+#            u$$$$$$$u$$$$$$$u
+#             u$"$"$"$"$"$"$u
+#  uuu        $$u$ $ $ $ $u$$       uuu
+# u$$$$        $$$$$u$u$u$$$       u$$$$
+#  $$$$$uu      "$$$$$$$$$"     uu$$$$$$
+#u$$$$$$$$$$$uu    """""    uuuu$$$$$$$$$$
+#$$$$"""$$$$$$$$$$uuu   uu$$$$$$$$$"""$$$"
+# """      ""$$$$$$$$$$$uu ""$"""
+#           uuuu ""$$$$$$$$$$uuu
+#  u$$$uuu$$$$$$$$$uu ""$$$$$$$$$$$uuu$$$
+#  $$$$$$$$$$""""           ""$$$$$$$$$$$"
+#   "$$$$$"                      ""$$$$""
+#     $$$"                         $$$$"
+#
+#
+################################################################################################################################################################
+myarg <- list(
+            mincov = COV, 
+            diffc = DIFC,            
+            qvc = QVC, 
+            tilesize = TS, 
+            rts = RTS, 
+            diffmeth = DIF, 
+            qvalue = QV, 
+            minCpG = CPG, 
+            minDMC = DMC, 
+            org = ORG, 
+            custom = CUSTOM, 
+            extract = EXTR,
+            customplots = CUSTOMPLOTS 
+)
+################################################################################
+# not in use yet
+# opts[] # min.per.group, # NULL by default or 1L Keep CpG present in at least one sample, Change to NULL for all sample (in case of replicates)
+# opts[] # mc.cores 1 by default
+# opts[] # Test for diff meth, fast.fischer if no replicates c("F", "Chisq", "fast.fisher", "midPval")
+# opts[] # eDMR DMC.qvalue=0.01 default > relax to 0.05
