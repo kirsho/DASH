@@ -1,16 +1,25 @@
 
 # Methylator package
-Methylator is a bunch of R scripts designed for Methyl-Seq secondary analysis, annotations and figure on HPC infrasctructure like ipop-up or ifb with **slurm** scheduler.  
-Primary analysis must be done with **WGBS-workflow** which starts with `.fastq` files and outputs `.bam` files, `.bedgraph` files for nucleotides methylation levels and coverage and global methylation level and an RData with BS in a (methylKit)[https://github.com/al2na/methylKit] object. 
+**Methylator** is a bunch of R scripts designed for DNA methylation studies with [Bisulfite sequencing](https://en.wikipedia.org/wiki/Bisulfite_sequencing) technics.   
+Primary analysis must be done with **WGBS-workflow**. It starts with `.fastq` files and outputs `.bam` files, `.bedgraph` files for nucleotides methylation levels and coverage and global methylation level and an RData with BS in a [methylKit](https://github.com/al2na/methylKit) object.   
+**Methylator** performs the secondary analyses like genomic features annotations and figures for quantivative parameters.   
+These R scripts are executed on HPC infrasctructures like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/) equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler.  
 
 ## Methylator can do :  
-- DMC : Differentially methylated CpG analysis.  
-- DMT : Differentially methylated Tiles analysis.  
-- eDMR : Differentially methylated Region analysis.  
+- DMC : Differentially Methylated CpG analysis.  
+- DMT : Differentially Methylated Tiles analysis.   
+- eDMR : Differentially Methylated Region analysis.   
 - BEDG : Generate `.bedgraph` files (% methylation, coverage, differential % methylation and q-value)  
 - FIG : Annotations and figures.  
 
-Methylator runs with on a Singularity/Apptainer container to respect the FAIR principes. You analysis is controlled by `Methylator_xxx.sh` to choose your analysis . A `Methylator_Config.txt` must be edited to pass specific parameters to your analysis. A `Annotatr_mm10_Customs.RData` can also be provided for user specific annotation. A `custom_plot.R` can also be given for user-specific plots.  
+**Methylator** is inspired and relies on 3 main recongnized R packages for DNA mehtylation analysis : 
+ - [methylKit](https://github.com/al2na/methylKit)  
+ - [eDRM](https://github.com/ShengLi/edmr)  
+ - [annotatr](https://bioconductor.org/packages/release/bioc/html/annotatr.html)  
+ 
+**Methylator** is executed within a Singularity/Apptainer container to respect the [FAIR](https://www.nature.com/articles/s41592-020-0742-y) principles. the "methylator.simg" contains r-base=4.1.3 and all its packages & dependencies. Apps version & image creation recipes are described bellow.   
+
+Your analysis is controlled by `Methylator_xxx.sh` to choose your analysis.  A `Methylator_Config.txt` must be edited to pass specific parameters to your analysis. A `Annotatr_mm10_Customs.RData` can also be provided for user specific annotation. A `custom_plot.R` can also be given for user-specific plots.  
 <!-- I wonder if some of the information in `Methylator_xxx.sh` should be given in `Methylator_Config.txt` -->
 
 ### Methylator scripts & files  
