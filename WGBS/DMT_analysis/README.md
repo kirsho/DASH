@@ -78,5 +78,7 @@ All bellow the skull must not be edited by user.
 <!--Things to do: rethink how projec directories are created and mannaged.  -->
 <!--Things to do: directories are created by default and not all used. add more ifesle depending of user choices  -->
 
-
-
+### Methylator_Config.txt
+<!-- this is not a real .txt file but an R scritp.  -->
+<!--Things to do: make real config file with options defined in Methylator_xxx.sh & Methylator_Config.txt -->
+Must be edited by user. It passes analyse threshold, values and parameters through the different script of the workflow.
