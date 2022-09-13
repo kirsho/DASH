@@ -1,6 +1,6 @@
 
 # Methylator package
-**Methylator** is a bunch of R scripts designed for DNA methylation studies with [Bisulfite sequencing](https://en.wikipedia.org/wiki/Bisulfite_sequencing) technics. It has been developped at the [BiBs](https://parisepigenetics.github.io/umr7216bioinfofacility/) plateform at [UMR7216 - Paris Epigenetics](http://parisepigenetics.com/) by Olivier Kirsh and Magali Hennion.      
+**Methylator** is a bunch of `bash` & `R` scripts designed for DNA methylation studies with [Bisulfite sequencing](https://en.wikipedia.org/wiki/Bisulfite_sequencing) technics. It has been developped at the [BiBs](https://parisepigenetics.github.io/umr7216bioinfofacility/) plateform at [UMR7216 - Paris Epigenetics](http://parisepigenetics.com/) by Olivier Kirsh. An integration within a snakemake workflow is under development.          
   
 **Methylator** performs the secondary analyses like genomic features annotations and figures.   
 These R scripts are executed on HPC infrasctructures like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/) equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler.  
@@ -64,21 +64,19 @@ The `Singularity_Methylator` image can be recreated with this 2 files stored (he
 
 
 ## Methylator files description
-
 ### Methylator_xxx.sh
-sbatch file for WGBS secondary analysis.
+Check this [example](https://github.com/kirsho/DASH/blob/main/WGBS/DMT_analysis/Methylator_DMT250_1_7.sh)
+This is an sbatch file for **Methylator** WGBS secondary analysis.he one to rules them all and **must** be edited by user.  
+- Slurm options header
+- Analysis version
+- Type of analyses <!-- what about exploration analyses??   -->
+- Experimental design <!-- mainly works for merge, develop deplicates design   -->
+- Input RData file(s) 
 
-You can choose which analysis you want to perfo
+All bellow the skull must not be edited by user.
+
+<!--Things to do: rethink how projec directories are created and mannaged.  -->
+<!--Things to do: directories are created by default and not all used. add more ifesle depending of user choices  -->
 
 
-```{R}
-################################################################################
-### Choose analysis type
-################################################################################
 
-DMC=no            # explo or analysis or no
-DMT=no            # analysis or no
-EDMR=no           # yes or no
-BEDG=no           # explo or diff
-FIG=yes           # yes or no
-```
