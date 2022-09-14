@@ -1,11 +1,11 @@
 
 # Methylator package
-**Methylator** is a bunch of `bash` & `R` scripts designed for DNA methylation studies with [Bisulfite sequencing](https://en.wikipedia.org/wiki/Bisulfite_sequencing) technics. It has been developped at the [BiBs](https://parisepigenetics.github.io/umr7216bioinfofacility/) plateform at [UMR7216 - Paris Epigenetics](http://parisepigenetics.com/) by Olivier Kirsh. An integration within a snakemake workflow is under development.          
+**Methylator** performs DNA methylation secondary analyses of [Bisulfite sequenced](https://en.wikipedia.org/wiki/Bisulfite_sequencing) DNA samples. It is developped at the [BiBs](https://parisepigenetics.github.io/umr7216bioinfofacility/) plateform of [UMR7216 - Paris Epigenetics](http://parisepigenetics.com/) unit by Olivier Kirsh. An integration within a snakemake workflow is under development with the help of Magali Hennion.          
   
-**Methylator** performs the secondary analyses like genomic features annotations and figures.   
-These R scripts are executed on HPC infrasctructures like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/) equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler.  
+With **Methylator** users can quantify & visualize sequencing coverage, DNA methylation, compare conditions and annotate with any genomic features annotations and plot some figures.   
+**Methylator** is written in `bash` & `R` and can be executed on HPC infrasctructures like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/) equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler.  
 
-The primary analysis (from `.fastq` files to `.bam` files) must first be done with **WGBS-workflow** <!-- add the like when the doc is ready...-->. 
+The primary analysis (from `.fastq` files to `.bam` files) must first be done with **WGBS-workflow** to  <!-- add the like when the doc is ready...-->. 
 <!-- one cool little short project, create RDta and methextract from a count table -->
 
 ## Methylator can do :  
