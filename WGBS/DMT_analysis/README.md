@@ -2,10 +2,11 @@
 # Methylator package
 **Methylator** performs DNA methylation secondary analyses of [Bisulfite sequenced](https://en.wikipedia.org/wiki/Bisulfite_sequencing) DNA samples. It is developped at the [BiBs](https://parisepigenetics.github.io/umr7216bioinfofacility/) plateform of [UMR7216 - Paris Epigenetics](http://parisepigenetics.com/) unit by Olivier Kirsh. An integration within a snakemake workflow is under development with the help of Magali Hennion.          
   
-With **Methylator** users can quantify & visualize sequencing coverage, DNA methylation, compare conditions and annotate with any genomic features annotations and plot some figures.   
-**Methylator** is written in `bash` & `R` and can be executed on HPC infrasctructures like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/) equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler.  
+With **Methylator** users can quantify & visualize sequencing coverage, DNA methylation, compare conditions and annotate with any genomic feature annotations and plot some figures.  
 
-The primary analysis (from `.fastq` files to `.bam` files) must first be done with **WGBS-workflow** to  <!-- add the like when the doc is ready...-->. 
+**Methylator** is written in `bash` & `R` and can be executed on HPC infrasctructures like equiped with [slurm](https://slurm.schedmd.com/documentation.html) scheduler and Singularity like [ipop-up](https://reyjul.gitlab.io/documentation-ipop-up/) or [ifb](https://ifb-elixirfr.gitlab.io/cluster/doc/).  
+
+The primary analysis (from `.fastq` files to `.bam` files) must first be done with [WGBSflow](https://github.com/parisepigenetics/WGBSflow). 
 <!-- one cool little short project, create RDta and methextract from a count table -->
 
 ## Methylator can do :  
@@ -15,7 +16,7 @@ The primary analysis (from `.fastq` files to `.bam` files) must first be done wi
 - BEDGRAPH : Generate `.bedgraph` files (% methylation, coverage, differential % methylation and q-value)  
 - FIGURES : Annotations and figures.  
 
-**Methylator** is inspired and relies on 3 main recongnized R packages for DNA mehtylation analysis : 
+**Methylator** is inspired and relies on 3 main recongnized R packages for DNA methylation analysis : 
  - [methylKit](https://github.com/al2na/methylKit)  
  - [eDRM](https://github.com/ShengLi/edmr)  
  - [annotatr](https://bioconductor.org/packages/release/bioc/html/annotatr.html)  
@@ -23,7 +24,7 @@ The primary analysis (from `.fastq` files to `.bam` files) must first be done wi
 **Methylator** is executed within a Singularity/Apptainer container to respect the [FAIR](https://www.nature.com/articles/s41592-020-0742-y) principles. The "methylator.simg" contains r-base=4.1.3 and all its packages & dependencies installed with conda in an ubuntu environment. Apps version & image creation recipes are described bellow. 
 
 ## Methylator scripts & files  
-Your analysis is controlled by `Methylator_xxx.sh` you can edit to speficy which analysis you want to do.  A `Methylator_Config.txt` must be edited to pass specific parameters to your analysis. Additional files like, `Annotatr_mm10_Customs.RData` can also be provided for user specific annotations or `custom_plot.R` for user-specific plots.  
+Your analysis is controlled by `Methylator_xxx.sh`. You can edit to speficy which analysis you want to do.  A `Methylator_Config.txt` must be edited to pass specific parameters to your analysis. Additional files like, `Annotatr_mm10_Customs.RData` can also be provided for user specific annotations or `custom_plot.R` for user-specific plots.  
 <!-- `Annotatr_mm10.RData` must be revisited and a `plot.R`must be created   -->
 <!-- I wonder if some of the information in `Methylator_xxx.sh` should be given in `Methylator_Config.txt` -->
 
