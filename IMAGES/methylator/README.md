@@ -6,7 +6,7 @@ Olivier Kirsh (olivier.kirsh@u-paris.fr)
 methylator.simg 
 ====  
 
-These 2 files allow you to recreate a singularity image (methylator.simg) used in WGBS secondary analysis (DMC, DMT, eDMR, annotation and figures)
+These 2 following files allow you to recreate a singularity image (methylator.simg) used in WGBS secondary analysis (DMC, DMT, eDMR, annotation and figures)
    
 - `edmr_install.R` is called through Rscript at the singularity build step (eDMR is distributed via github and can not be installed with conda).    
 - `Singularity` : Singularity definition file to build a complete methylator Singularity image.    
