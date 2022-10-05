@@ -13,4 +13,5 @@ This folder contains the definition files to recreate the two singularity images
   - DMT  
   - eDMR   
   - annotations
+  - figures
   
